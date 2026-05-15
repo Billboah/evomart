@@ -27,11 +27,14 @@ jobs:
         with:
           node-version: 24
           cache: "pnpm"
+          cache-dependency-path: "app/pnpm-lock.yaml"
 
       - name: Install dependencies
+        working-directory: ./app
         run: pnpm install --frozen-lockfile
 
       - name: Build static site
+        working-directory: ./app
         run: pnpm run build
 
       - name: Configure AWS credentials (OIDC)
@@ -42,14 +45,14 @@ jobs:
 
       - name: Deploy static assets to S3 (Immutable assets)
         run: |
-          aws s3 sync out/ s3://${{ secrets.AWS_S3_BUCKET }} \
+          aws s3 sync app/out/ s3://${{ secrets.AWS_S3_BUCKET }} \
             --delete \
             --exclude "*.html" \
             --cache-control "public, max-age=31536000, immutable"
 
       - name: Deploy HTML entrypoints to S3 (No-cache)
         run: |
-          aws s3 sync out/ s3://${{ secrets.AWS_S3_BUCKET }} \
+          aws s3 sync app/out/ s3://${{ secrets.AWS_S3_BUCKET }} \
             --include "*.html" \
             --cache-control "public, max-age=0, must-revalidate"
 
