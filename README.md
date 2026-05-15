@@ -1,4 +1,4 @@
-# EvoMart — From Startup to Scale
+# EvoMart - From Startup to Scale
 
 EvoMart is the Phase 1 implementation of a deliberate AWS commerce platform evolution. The goal is to validate the market with a near-zero cost MVP before introducing any backend, database, or authentication.
 
@@ -6,7 +6,7 @@ EvoMart is the Phase 1 implementation of a deliberate AWS commerce platform evol
 
 A startup wants to launch an e-commerce platform but is cautious about cost. Instead of over-engineering from day one, they build only what is needed, when it is needed. Every architectural upgrade is triggered by real growth, real data, and real business decisions.
 
-This repository represents EvoMart at **Phase 1 — The Near-Zero Cost MVP**.
+This repository represents EvoMart at **Phase 1 - The Near-Zero Cost MVP**.
 
 ## Application Features
 
@@ -47,7 +47,7 @@ Phase 1 CI/CD flow:
 
 ## Repo Structure
 
-- `commerce/` — main Next.js application
+- `app/` — main Next.js application
   - `components/` — reusable UI components
   - `context/` — React state providers
   - `lib/` — helper utilities and loaders
