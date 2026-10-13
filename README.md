@@ -1,3 +1,6 @@
+![Under Construction](https://shields.io)
+This project is currently a Work in Progress
+
 # EvoMart - From Startup to Scale
 
 EvoMart is the Phase 1 implementation of a deliberate AWS commerce platform evolution. The goal is to validate the market with a near-zero cost MVP before introducing any backend, database, or authentication.
